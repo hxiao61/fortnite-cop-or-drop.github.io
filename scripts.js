@@ -1972,6 +1972,7 @@ function displayNextSkin() {
         setTimeout(() => {
             const imageUrl = skins[currentIndex];
             skinImage.src = imageUrl;
+            skinImage.alt = "Image not available, please use the 'About this image' button";
 
             setTimeout(() => {
                 skinImage.style.opacity = '1';
