@@ -1852,7 +1852,9 @@ let skins = [
 ];
 
 function getProxyUrl(url) {
-    return `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
+    const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
+    console.log('Using proxy URL:', proxyUrl);
+    return proxyUrl;
 }
 
 let currentIndex = parseInt(localStorage.getItem('currentIndex'), 10) || 0;
@@ -1975,8 +1977,9 @@ function displayNextSkin() {
         skinImage.style.opacity = '0';
 
         setTimeout(() => {
-            const imageUrl = getProxyUrl(skins[currentIndex]);
-            skinImage.src = imageUrl;
+            const originalUrl = skins[currentIndex];
+            const proxiedUrl = getProxyUrl(originalUrl);
+            skinImage.src = proxiedUrl;
             skinImage.alt = "Image not available, please use the 'About this image' button";
 
             setTimeout(() => {
@@ -1988,7 +1991,7 @@ function displayNextSkin() {
             aboutButton.id = 'about-skin-button';
             aboutButton.textContent = 'About this Skin';
             aboutButton.onclick = function() {
-                window.open(getAboutLink(imageUrl), '_blank');
+                window.open(getAboutLink(originalUrl), '_blank');
             };
 
             if (!document.getElementById('about-skin-button')) {
@@ -2040,7 +2043,7 @@ function updateHistory() {
         const container = document.createElement('div');
 
         const imageElement = document.createElement('img');
-        imageElement.src = skin;
+        imageElement.src = getProxyUrl(skin);
         container.appendChild(imageElement);
 
         const textElement = document.createElement('div');
