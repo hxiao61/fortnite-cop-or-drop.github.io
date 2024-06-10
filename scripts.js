@@ -1933,13 +1933,17 @@ function showResults(skinId) {
             console.log(`Total votes: ${totalVotes}, Cop votes: ${copVotes}, Drop votes: ${dropVotes}`);
 
             document.getElementById('results').innerHTML = `
+                <h3>Previous Skin's Ratings:</h3>
                 <p>Cop: ${copVotes} (${(copVotes / totalVotes * 100).toFixed(2)}%)</p>
                 <p>Drop: ${dropVotes} (${(dropVotes / totalVotes * 100).toFixed(2)}%)</p>
             `;
             document.getElementById('results').style.display = 'block';
         } else {
             console.log(`No votes found for skin: ${skinId}`);
-            document.getElementById('results').innerHTML = `<p>No votes yet.</p>`;
+            document.getElementById('results').innerHTML = `
+                <h3>Previous Skin's Ratings:</h3>
+                <p>No votes yet.</p>
+            `;
             document.getElementById('results').style.display = 'block';
         }
     }).catch(error => {
