@@ -1852,12 +1852,11 @@ let skins = [
 ];
 let currentIndex = parseInt(localStorage.getItem('currentIndex'), 10) || 0;
 
-console.log('Firebase configuration: ', firebaseConfig);
-
-// Ensure Firebase is initialized
+console.log('Initializing Firebase...');
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
 }
+console.log('Firebase initialized:', firebase.apps.length > 0);
 
 const db = firebase.database();
 

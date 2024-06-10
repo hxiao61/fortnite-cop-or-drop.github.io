@@ -12,6 +12,7 @@
     <!-- Firebase Database -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <script>
+        console.log('Loading Firebase scripts...');
         // Your web app's Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyAcOEOcRem9YcTQeuv-yeHMC2JFCoSr9Eg",
@@ -24,6 +25,7 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
+        console.log('Firebase initialized: ', firebase.apps.length > 0);
     </script>
 </head>
 <body>
