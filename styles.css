@@ -1,0 +1,90 @@
+body, html {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+#image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    min-height: 500px;
+}
+
+img {
+    width: 500px;
+    height: auto;
+    margin-bottom: 10px;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+button {
+    margin: 10px;
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    color: black;
+    outline: none;
+    background-color: #007BFF;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.cop {
+    background-color: lightgreen;
+}
+
+.cop:hover {
+    background-color: #32CD32;
+}
+
+.drop {
+    background-color: #FFCCCC;
+}
+
+.drop:hover {
+    background-color: #FF6666;
+}
+
+#buttons button.cop, #buttons button.drop {
+    font-size: 22px;
+    padding: 15px 30px;
+}
+
+#history {
+    margin-top: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+#history div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#history img {
+    width: 200px;
+    height: auto;
+    margin-right: 15px;
+}
+
+#history div div {
+    margin: 15px 25px;
+    font-size: 20px;
+}
+
+.copText {
+    color: lightgreen;
+}
+
+.dropText {
+    color: #FF6666;
+}

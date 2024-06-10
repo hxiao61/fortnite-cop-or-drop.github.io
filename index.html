@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortnite Cop or Drop</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <!-- Firebase Auth -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <!-- Firebase Database -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAcOEOcRem9YcTQeuv-yeHMC2JFCoSr9Eg",
+            authDomain: "fortcd-42011.firebaseapp.com",
+            projectId: "fortcd-42011",
+            storageBucket: "fortcd-42011.appspot.com",
+            messagingSenderId: "405168195185",
+            appId: "1:405168195185:web:351d8f73b33a15076bbdd0",
+            measurementId: "G-E3XJHFL61G"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+<body>
+    <button onclick="clearHistory()" style="background-color: #f8f8f8; color: black;">Clear History</button>
+    <div id="image-container">
+        <img src="" id="fortnite-skin" alt="Loading...">
+    </div>
+    <div id="buttons">
+        <button onclick="rateSkin('cop')" class="cop">Cop</button>
+        <button onclick="rateSkin('drop')" class="drop">Drop</button>
+    </div>
+    <div id="results" style="display: none;"></div>
+    <button onclick="showHistory()" style="background-color: #f8f8f8; color: black;">Show/Hide History</button>
+    <div id="history" style="display:none;"></div>
+    <script src="scripts.js"></script>
+</body>
+</html>
