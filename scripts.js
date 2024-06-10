@@ -1860,7 +1860,7 @@ console.log('Firebase initialized:', firebase.apps.length > 0);
 
 const db = firebase.database();
 
-// Function to handle anonymous sign-in
+
 function signInAnonymously() {
     return firebase.auth().signInAnonymously()
         .catch(error => {
@@ -1868,7 +1868,7 @@ function signInAnonymously() {
         });
 }
 
-// Ensure the user is signed in anonymously
+
 function ensureAnonymousAuth() {
     return new Promise((resolve, reject) => {
         firebase.auth().onAuthStateChanged(user => {
@@ -1883,12 +1883,12 @@ function ensureAnonymousAuth() {
     });
 }
 
-// Function to sanitize skin ID
+
 function sanitizeSkinId(skin) {
     return skin.replace(/[^a-zA-Z0-9_-]/g, '_');
 }
 
-// Function to rate skin
+
 function rateSkin(rating) {
     ensureAnonymousAuth().then(user => {
         if (currentIndex >= skins.length) return;
@@ -1902,7 +1902,7 @@ function rateSkin(rating) {
         const skinId = sanitizeSkinId(skin);
         const userVoteKey = `votes/${skinId}/${user.uid}`;
 
-        // Save vote to Firebase
+
         firebase.database().ref(userVoteKey).set(rating).then(() => {
             console.log(`Saved vote: ${rating} for skin: ${skinId} by user: ${user.uid}`);
             document.getElementById('buttons').style.display = 'none';
@@ -1976,7 +1976,7 @@ function displayNextSkin() {
 
             setTimeout(() => {
                 skinImage.style.opacity = '1';
-                buttons.style.display = 'block'; // Show buttons when the new image is displayed
+                buttons.style.display = 'block';
             }, 100);  
 
             const aboutButton = document.getElementById('about-skin-button') || document.createElement('button');
@@ -1992,7 +1992,7 @@ function displayNextSkin() {
         }, 300); 
     } else {
         skinContainer.innerHTML = '<h1>No more skins left to rate!</h1>';
-        buttons.style.display = 'none'; // Hide buttons when there are no more images
+        buttons.style.display = 'none'; 
     }
 }
 
